@@ -1,12 +1,10 @@
-# Developer Exercise
+This an Application CLI written in java. The application promts you to enter a number of products by your choice. Then for every product you should enter the produc's name and price. There is an option for the admin 
+to set a special deal item for the store - every second special item the customer buys has a price reduction by 50%. Moreover, the admin can set a two for three deal - if the customer buys all three items, from the first three scanned
+items of that type, the chepeast will be free. The application assumes, customer choices to buy goods are promted elsewhere, therefore for testing purposes anything a customer buys is hardcoded. The application is made just for showing
+some of the developer's knowledge, so it is chosen to make some of the program simplier, when more logic wouldn't show much of the developer's skills but would unnecessary extra time(for example, the goods don't have quantity, 
+there is a possibility for more abstraction, but it would't contribute much to the app, and the UI is pretty simple and unrealistic). However, the application meets all the requirements and works properly.
 
-This exercise is designed to demonstrate a candidate's abilities across a range of competencies in software development (The applicant can pick any language of their preference)
 
-## Instructions
-
-1. Fork the repository
-2. Implement a solution of the `Requirements` (feel free to use any helper packages/frameworks that you think think will be of help)
-3. Share the forked repository
 
 ## "Business" Requirements
 
@@ -50,21 +48,3 @@ The items are processed(Scanned) in order:
 - The other 2 items scanned `tomato` and `banana` are not part of any deals so they are charged their basic price `70c` total
 
 The total amount the is equal to: `90c + 39c + 70c = 1 aws and 99 clouds` (199 clouds = 1.99 aws)
-
-## Grading
-
-You will be scored on the following:
-
-- Code cleanliness and ease of understandability
-- Code tests
-- Code reusability
-- Code modularity (i.e. ease of extension)
-- Documentation
-
-## Demonstrable concepts
-
-You are free to make your solution to this exercise as simple or as complicated as you want based off the above criteria. The end result can come in the for of either of the options below:
-
-- REST/HTTP API
-- User interface (web app)
-- Application CLI
