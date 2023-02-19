@@ -14,6 +14,12 @@ public class Admin {
     }
 
     public boolean addGroceryToTheShop(Groceries grocery, BigDecimal price) {
+        if(price.compareTo(BigDecimal.ZERO) <= 0 || price.scale() > 2) {
+            throw new IllegalArgumentException("Invalid price!");
+        }
+        if(grocery == null) {
+            throw new IllegalArgumentException("Invalid grocery!");
+        }
         return this.groceryShop.addGrocery(grocery, price);
     }
 

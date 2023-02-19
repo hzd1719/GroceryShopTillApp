@@ -63,7 +63,7 @@ public class GroceryShop {
 
 
     //get the final price
-    public String finalPrice(GroceryShopTill groceryShopTill) {
+    private String finalPrice(GroceryShopTill groceryShopTill) {
         BigDecimal price = calculateFinalPrice(groceryShopTill);
         return priceToStringStatement(price, "aws", "clouds");
     }
@@ -141,10 +141,17 @@ public class GroceryShop {
 
     //reduce the price by reduceBy times of every second special item
     private BigDecimal reducePriceSpecialDeal(BigDecimal price, int quantityOfSpecialItem, int reduceBy) {
-        price = price.subtract(
-                (availableGroceries.get(this.specialDealItem).divide(BigDecimal.valueOf(reduceBy)))
-                        .multiply(BigDecimal.valueOf(quantityOfSpecialItem))
-        );
+       if(this.availableGroceries.get(this.specialDealItem).compareTo(BigDecimal.valueOf(0.01)) == 0) {
+            price = price.subtract(BigDecimal.valueOf(0.01).multiply(BigDecimal.valueOf(quantityOfSpecialItem)));
+        }
+        else {
+            price = price.subtract(
+                    (availableGroceries.get(this.specialDealItem).divide(BigDecimal.valueOf(reduceBy)))
+                           .multiply(BigDecimal.valueOf(quantityOfSpecialItem))
+           );
+
+
+        }
 
         return price;
     }
